@@ -7,38 +7,28 @@ class Solution
     //Function to check if brackets are balanced or not.
     bool ispar(string x)
     {
-        stack<char> s;
-        for(int i=0; i<x.length(); i++){
-            char ch = x[i];
-            
-            if(ch == '(' || ch == '{' || ch == '['){
-                s.push(ch);
-            }
-            else{
-                if(!s.empty()){
-                    char top = s.top();
-                    if(
-                       (ch==')' && top=='(')||
-                       (ch=='}' && top=='{')||
-                       (ch==']' && top=='[')
-                    )
-                    {
-                        s.pop();
-                    }
-                    else{
-                        return false;
-                    }
-                }
-                else{
-                    return false;
-                }
-            }
-        }
+        stack<char>s;
+        s.push(x[0]);
         
-    if(s.empty())
-        return true;
-    else
+        for(int i=1; i<x.size(); i++){
+            if(!s.empty()){
+                if(x[i]=='(' and s.top()==')') s.pop();
+                else if(x[i]==')' and s.top()=='(') s.pop();
+                else if(x[i]=='{' and s.top()=='}') s.pop();
+                else if(x[i]=='[' and s.top()==']') s.pop();
+                else if(x[i]=='}' and s.top()=='{') s.pop();
+                else if(x[i]==']' and s.top()=='[') s.pop();
+                else s.push(x[i]);
+            }
+            else s.push(x[i]);
+        }
+        if(s.empty()) return true;
         return false;
     }
 
 };
+
+// TC = O(|x|) 
+// SC = O(|x|)
+
+// GFG Q Link - https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1
