@@ -29,4 +29,7 @@ int MyQueue :: pop()
        return ans;
 }
 
+// TC = O(1) for both push() and pop()
+// SC = O(1) for both push() and pop()
+
 // GFG Q Link - https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
