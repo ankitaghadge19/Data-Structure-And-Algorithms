@@ -65,5 +65,7 @@ public:
     }
 };
 
+// TC = O(N) 
+// SC = O(N)
 
 // Leet Code Q link - https://leetcode.com/problems/largest-rectangle-in-histogram/

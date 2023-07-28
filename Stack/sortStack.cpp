@@ -7,30 +7,29 @@ public:
 	void sort();
 };
 
-void sortStk(stack<int>&s, int elem){
-    if(s.empty() or s.top()<elem){
-        s.push(elem);
+void solve(stack<int> &s, int num){
+    if(s.empty() || s.top()<num){
+        s.push(num);
         return;
     }
-    else{
-        int top = s.top();
-        s.pop();
-        sortStk(s, elem);
-        s.push(top);
-    }
-}
-
-void solve(stack<int>&s){
-    if(s.empty()) return;
     
-    int num = s.top();
+    int n = s.top();
     s.pop();
-    solve(s);  //use to pop all the elements from stack
-    
-    sortStk(s, num);
+    solve(s, num);
+    s.push(n);
 }
 
 void SortedStack :: sort()
 {
-   solve(s);
+   if(s.empty()) return;
+   
+   int num = s.top();
+   s.pop();
+   sort();
+   solve(s, num);
 }
+
+// TC = O(N*N) 
+// SC = O(N)recursive
+
+// GFG Q Link - https://practice.geeksforgeeks.org/problems/sort-a-stack/1

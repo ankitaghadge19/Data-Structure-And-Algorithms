@@ -26,3 +26,8 @@ class Solution
         deleteMid(s, 1, pos);
     }
 };
+
+// TC = O(N) 
+// SC = O(N)
+
+// GFG Q Link - https://practice.geeksforgeeks.org/problems/delete-middle-element-of-a-stack/1

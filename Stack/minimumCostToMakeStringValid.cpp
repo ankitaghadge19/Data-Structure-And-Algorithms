@@ -40,3 +40,8 @@ int findMinimumCost(string str) {
 // eg: {{{}
 //     {{}{}}
 // ans = 1
+
+// TC = O(N) 
+// SC = O(N)
+
+// Leet Code Q link - https://www.codingninjas.com/studio/problems/minimum-cost-to-make-string-valid_1115770
