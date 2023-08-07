@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int findUniqueElement(int arr[], int size){
+    int sum = 0;
+    for(int i=0; i<size; i+=2){
+        sum = sum ^ arr[i];
+    }
+    return sum;
+}
+
+int main(){
+
+    int arr[5] = {2, 3, 4, 3, 2};
+
+    cout<<"Unique element in given array is: ";
+    cout<<findUniqueElement(arr, 5);
+}
+
+// TC = O(N. Log(A[i])) 
+// SC = O( Log(A[i]))
+
+// GFG Q Link - https://practice.geeksforgeeks.org/problems/find-unique-element2632/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
