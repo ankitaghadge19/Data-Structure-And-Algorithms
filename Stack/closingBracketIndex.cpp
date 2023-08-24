@@ -1,5 +1,5 @@
 /* Given a string with brackets ('[' and ']') and the index of an opening bracket. 
-Find the index of the corresponding closing bracket
+Find the index of the corresponding closing bracket.
 eg: Input:
     S = "[ABC[23]][89]"
     pos = 0
@@ -27,8 +27,7 @@ class Solution
                         else{
                             st.pop();
                         }
-                    }
-                    
+                    }    
             }
             return -1;
         }
