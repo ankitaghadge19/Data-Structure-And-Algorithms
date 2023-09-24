@@ -1,10 +1,12 @@
-/* Input:
+/*  
+    Input:
     S = "HEY U"
     Output: 4433999088
     Explanation: For 'H' press '4' two times.
     For 'E' press '3' two times. For 'Y' press '9' 
     three times. For white space press '0' one time.
-    For 'U' press '8' two times */
+    For 'U' press '8' two times.
+*/
 
 #include<bits/stdc++.h>
 using namespace std;
