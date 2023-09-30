@@ -39,8 +39,9 @@ class Solution{
 };
 
 // TC = O(N*|S|*log|S|), where |S| is the length of each string in vector strList.
-// N is the length of complete vector strList
+// N is the length of complete vector strList.
 // TC of Sort() = O(Nlog(N))
+// TC of map = O(log(N))
 // SC = O(1)
 
 // GFG Q Link - https://practice.geeksforgeeks.org/problems/print-anagrams-together/1
