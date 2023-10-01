@@ -4,8 +4,7 @@ using namespace std;
 class Solution
 {
     public:
-    int transform (string A, string B)
-    {
+    int transform (string A, string B){
         int m=A.length();
         int n=B.length();
         int s1=0, s2=0;
