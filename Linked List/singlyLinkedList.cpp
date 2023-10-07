@@ -32,10 +32,10 @@ void insertAtHead(Node* &head, int d){
 void insertAtTail(Node* &tail, int d ){
     Node* temp = new Node(d);
     tail->next = temp;
-    tail = tail->next;
+    tail = temp;
 }
 
-void insertAtPosition(Node* &head,Node* &tail, int position, int d){
+void insertAtPosition(Node* &head, Node* &tail, int position, int d){
     // Inserting at first
     if(position == 1){
         insertAtHead(head, d);
@@ -60,7 +60,7 @@ void insertAtPosition(Node* &head,Node* &tail, int position, int d){
     temp->next = nodeToInsert;
 }
 
-void deleteNode(int position, Node* head){
+void deleteNode(int position, Node* &head){
     if(position == 1){
         Node* temp = head;
         head = head->next;
@@ -68,6 +68,7 @@ void deleteNode(int position, Node* head){
         delete temp;
     }
     else{
+        //deleting any middle node or last node
         Node* curr = head;
         Node* prev = NULL;
 
@@ -84,6 +85,10 @@ void deleteNode(int position, Node* head){
 }
 
 void print(Node* &head){
+    if(head == NULL){
+        cout<<"List is empty!"<<endl;
+        return;
+    }
     Node* temp = head;
     while(temp!=NULL){
         cout<<temp->data<<" ";
