@@ -12,6 +12,11 @@ class Solution
             ans[i]= prod%10;
             carry = prod/10;
         }
+
+        while(carry){
+            ans.push_back(carry%10);
+            carry /= 10;
+        }
     }
     vector<int> factorial(int N){
         vector<int> ans;
