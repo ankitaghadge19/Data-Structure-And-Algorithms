@@ -33,4 +33,4 @@ Node* deleteNode(Node *head,int x)
 // TC = O(N)
 // SC = O(1)
 
-// Coding Ninjas Q Link - https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1
+// GFG Q Link - https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1

@@ -36,4 +36,4 @@ Node* deleteMid(Node* head)
 // TC = O(N)
 // SC = O(1)
 
-// Coding Ninjas Q Link - https://www.geeksforgeeks.org/problems/delete-middle-of-linked-list/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
+// GFG Q Link - https://www.geeksforgeeks.org/problems/delete-middle-of-linked-list/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article

@@ -66,4 +66,4 @@ public:
 // TC = O(N)
 // SC = O(1)
 
-// Coding Ninjas Q Link - https://www.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5035/1
+// GFG Q Link - https://www.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5035/1
