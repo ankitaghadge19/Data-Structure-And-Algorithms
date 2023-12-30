@@ -1,48 +1,70 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Node
-        {
-        public:
-            int data;
-            Node *next;
-            Node()
-            {
-                this->data = 0;
-                next = NULL;
-            }
-            Node(int data)
-            {
-                this->data = data;
-                this->next = NULL;
-            }
-            Node(int data, Node* next)
-            {
-                this->data = data;
-                this->next = next;
-            }
-        };
-
-Node* reverseLinkedList(Node *head)
+struct Node
 {
-    if(head==NULL and head->next==NULL){
-        return head;
+    int data;
+    struct Node* next;
+    
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+};
+
+class Solution
+{
+public:
+    Node *rev(Node *head)
+    {
+        Node *prev = NULL;
+        Node *curr = head;
+        Node *forward = NULL;
+
+        while (curr)
+        {
+            forward = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = forward;
+        }
+        return prev;
     }
 
-    Node* prev = NULL;
-    Node* curr = head;
-    Node* forward = NULL;
+    Node *addOne(Node *head)
+    {
+        Node *revHead = rev(head);
+        Node *temp = revHead;
+        bool f = true;
 
-    while(curr!=NULL){
-        forward=curr->next;
-        curr->next=prev;
-        prev=curr;
-        curr=forward;
+        while (temp != NULL && f == true)
+        {
+            if (temp->data == 9 && temp->next == NULL)
+            {
+                temp->data = 1;
+                Node *newHead = new Node(0);
+                newHead->next = revHead;
+                revHead = newHead;
+                temp=temp->next;
+            }
+            else if (temp->data == 9)
+            {
+                temp->data = 0;
+                temp = temp->next;
+            }
+            else
+            {
+                temp->data = temp->data + 1;
+                temp = temp->next;
+                f = false;
+            }
+        }
+        head = rev(revHead); 
+        return head;         
     }
-    return prev;
-}
+};
 
-// TC = O(n)
+// TC = O(N)
 // SC = O(1)
 
-// Coding Ninjas Q Link - https://www.codingninjas.com/studio/problems/reverse-linked-list_920513?utm_source=youtube&utm_medium=affiliate&utm_campaign=Codestudio_Linkedlistseries&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM
+// Coding Ninjas Q Link - https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1
