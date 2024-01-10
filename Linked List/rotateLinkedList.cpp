@@ -17,22 +17,31 @@ struct Node {
 class Solution
 {
    public:
-    //Function to rotate a linked list.
+    //Function to rotate a linked list by k elements
     Node* rotate(Node* head, int k)
     {
-        Node*tail = head;
-        Node*temp=head;
-        
-        while(tail->next) tail=tail->next;
-        
-        while(k--){
-            Node*newHead=temp->next;
-            tail->next=temp;
-            temp->next=NULL;
-            tail=tail->next;
-            temp=newHead;
+        if(head == NULL or head->next == NULL){
+            return head;
         }
-        return temp;
+        
+        Node* temp = head;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        
+        temp->next = head;
+        
+        temp = head;
+        int n = k-1;
+        
+        while(n){
+            temp = temp->next;
+            n--;
+        }
+        
+        Node* newHead = temp->next;
+        temp->next = NULL;
+        return newHead;
     }
 };
 
